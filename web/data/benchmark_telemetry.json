@@ -1,0 +1,1641 @@
+{
+  "generated_utc": "2026-11-20T10:42:15.820647+00:00",
+  "source": "Binance Public Market Data API (data-api.binance.vision / data-stream.binance.vision)",
+  "live_capture": {
+    "duration_sec": 12.0,
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT"
+    ],
+    "total_ticks_captured": 347,
+    "parquet_file": "data/bitemporal_ticks.parquet",
+    "parquet_size_kb": 30.63,
+    "compression": "zstd"
+  },
+  "benchmark_50k": {
+    "events_replayed": 50000,
+    "total_seconds": 0.0324,
+    "throughput_events_per_sec": 1545576,
+    "latency_us": {
+      "p50": 0.5,
+      "p95": 0.5,
+      "p99": 0.6,
+      "p99_9": 0.7,
+      "mean": 0.47
+    },
+    "sequence_gaps": 0,
+    "histogram": [
+      {
+        "bucket": "0-1us",
+        "count": 49974
+      },
+      {
+        "bucket": "1-2us",
+        "count": 13
+      },
+      {
+        "bucket": "2-3us",
+        "count": 0
+      },
+      {
+        "bucket": "3-5us",
+        "count": 2
+      },
+      {
+        "bucket": "5-10us",
+        "count": 10
+      },
+      {
+        "bucket": "10-25us",
+        "count": 1
+      },
+      {
+        "bucket": "25-100us",
+        "count": 0
+      }
+    ]
+  },
+  "pit_audit": {
+    "as_of_knowledge_ms": 1795171318725,
+    "rows_returned": 174,
+    "future_leaks": 0,
+    "max_knowledge_ms": 1795171318725,
+    "passed": true
+  },
+  "reconciliation_report": [
+    {
+      "symbol": "BTCUSDT",
+      "timestamp_ms": 1795171324643,
+      "ws_last_update_id": 103259975651,
+      "rest_last_update_id": 103259976503,
+      "ws_mid": 62239.994999999995,
+      "rest_mid": 62246.415,
+      "mid_drift_bps": 1.0314,
+      "bid_drift_bps": 1.0314,
+      "ask_drift_bps": 1.0314,
+      "crossed_book": false,
+      "sequence_gaps": 0,
+      "z_score_outlier": false,
+      "status": "OK"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timestamp_ms": 1795171324643,
+      "ws_last_update_id": 83662335227,
+      "rest_last_update_id": 83662336434,
+      "ws_mid": 1759.1550000000002,
+      "rest_mid": 1759.3249999999998,
+      "mid_drift_bps": 0.9663,
+      "bid_drift_bps": 0.9663,
+      "ask_drift_bps": 0.9663,
+      "crossed_book": false,
+      "sequence_gaps": 0,
+      "z_score_outlier": false,
+      "status": "OK"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "timestamp_ms": 1795171324643,
+      "ws_last_update_id": 30707717528,
+      "rest_last_update_id": 30707717619,
+      "ws_mid": 72.60499999999999,
+      "rest_mid": 72.60499999999999,
+      "mid_drift_bps": 0.0,
+      "bid_drift_bps": 0.0,
+      "ask_drift_bps": 0.0,
+      "crossed_book": false,
+      "sequence_gaps": 0,
+      "z_score_outlier": false,
+      "status": "OK"
+    }
+  ],
+  "symbol_snapshots": {
+    "BTCUSDT": {
+      "last_update_id": 103259975651,
+      "updates_applied": 121,
+      "sequence_gaps": 0,
+      "crossed_book_events": 0,
+      "top_bids": [
+        [
+          62239.99,
+          2.53775
+        ],
+        [
+          62239.98,
+          0.16236
+        ],
+        [
+          62239.48,
+          0.47405
+        ],
+        [
+          62239.47,
+          0.16909
+        ],
+        [
+          62238.5,
+          0.00321
+        ],
+        [
+          62238.47,
+          0.01808
+        ],
+        [
+          62238.1,
+          0.004
+        ],
+        [
+          62238.07,
+          9e-05
+        ],
+        [
+          62238.06,
+          0.43423
+        ],
+        [
+          62237.8,
+          0.31391
+        ],
+        [
+          62237.68,
+          0.04037
+        ],
+        [
+          62237.47,
+          0.02169
+        ]
+      ],
+      "top_asks": [
+        [
+          62240.0,
+          0.00046
+        ],
+        [
+          62240.01,
+          0.00018
+        ],
+        [
+          62241.15,
+          0.00842
+        ],
+        [
+          62242.14,
+          0.00018
+        ],
+        [
+          62242.15,
+          0.01404
+        ],
+        [
+          62242.28,
+          9e-05
+        ],
+        [
+          62243.14,
+          0.00018
+        ],
+        [
+          62243.15,
+          0.01685
+        ],
+        [
+          62243.32,
+          0.40203
+        ],
+        [
+          62244.13,
+          0.00018
+        ],
+        [
+          62244.14,
+          0.01685
+        ],
+        [
+          62244.69,
+          0.00018
+        ]
+      ],
+      "volume_24h_quote": 1466213066.5657945,
+      "price_change_pct_24h": -2.507
+    },
+    "ETHUSDT": {
+      "last_update_id": 83662335227,
+      "updates_applied": 119,
+      "sequence_gaps": 0,
+      "crossed_book_events": 0,
+      "top_bids": [
+        [
+          1759.15,
+          178.8035
+        ],
+        [
+          1759.14,
+          31.1431
+        ],
+        [
+          1759.13,
+          1.6
+        ],
+        [
+          1759.12,
+          20.4931
+        ],
+        [
+          1759.11,
+          41.351
+        ],
+        [
+          1759.1,
+          6.6145
+        ],
+        [
+          1759.07,
+          1.8456
+        ],
+        [
+          1759.06,
+          6.5903
+        ],
+        [
+          1759.05,
+          6.7581
+        ],
+        [
+          1759.04,
+          2.1334
+        ],
+        [
+          1759.03,
+          8.6033
+        ],
+        [
+          1759.02,
+          1.8596
+        ]
+      ],
+      "top_asks": [
+        [
+          1759.16,
+          1.3876
+        ],
+        [
+          1759.17,
+          0.006
+        ],
+        [
+          1759.22,
+          0.003
+        ],
+        [
+          1759.23,
+          0.2219
+        ],
+        [
+          1759.24,
+          0.4647
+        ],
+        [
+          1759.26,
+          0.003
+        ],
+        [
+          1759.27,
+          0.3581
+        ],
+        [
+          1759.29,
+          0.0029
+        ],
+        [
+          1759.3,
+          0.006
+        ],
+        [
+          1759.31,
+          0.4298
+        ],
+        [
+          1759.32,
+          0.003
+        ],
+        [
+          1759.33,
+          0.8527
+        ]
+      ],
+      "volume_24h_quote": 645853695.75908,
+      "price_change_pct_24h": -2.581
+    },
+    "SOLUSDT": {
+      "last_update_id": 30707717528,
+      "updates_applied": 107,
+      "sequence_gaps": 0,
+      "crossed_book_events": 0,
+      "top_bids": [
+        [
+          72.6,
+          408.245
+        ],
+        [
+          72.59,
+          1752.608
+        ],
+        [
+          72.58,
+          1638.218
+        ],
+        [
+          72.57,
+          1646.656
+        ],
+        [
+          72.56,
+          1092.821
+        ],
+        [
+          72.55,
+          632.687
+        ],
+        [
+          72.54,
+          1712.793
+        ],
+        [
+          72.53,
+          1843.292
+        ],
+        [
+          72.52,
+          1663.892
+        ],
+        [
+          72.51,
+          2015.095
+        ],
+        [
+          72.5,
+          376.316
+        ],
+        [
+          72.49,
+          927.238
+        ]
+      ],
+      "top_asks": [
+        [
+          72.61,
+          989.826
+        ],
+        [
+          72.62,
+          1558.911
+        ],
+        [
+          72.63,
+          1326.453
+        ],
+        [
+          72.64,
+          1391.958
+        ],
+        [
+          72.65,
+          1593.773
+        ],
+        [
+          72.66,
+          712.156
+        ],
+        [
+          72.67,
+          745.907
+        ],
+        [
+          72.68,
+          2073.043
+        ],
+        [
+          72.69,
+          251.306
+        ],
+        [
+          72.7,
+          640.108
+        ],
+        [
+          72.71,
+          2796.937
+        ],
+        [
+          72.72,
+          43.174
+        ]
+      ],
+      "volume_24h_quote": 185957230.49823,
+      "price_change_pct_24h": -2.643
+    }
+  },
+  "bitemporal_replay_series": [
+    {
+      "event_time_ms": 1795171312714,
+      "knowledge_time_ms": 1795171312744,
+      "mid_price": 62229.99,
+      "microprice": 62229.9977,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6247,
+      "impact_buy_100k_bps": 0.2437,
+      "processing_us": 32.2
+    },
+    {
+      "event_time_ms": 1795171312814,
+      "knowledge_time_ms": 1795171312843,
+      "mid_price": 62229.99,
+      "microprice": 62229.9977,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6223,
+      "impact_buy_100k_bps": 0.2432,
+      "processing_us": 28.1
+    },
+    {
+      "event_time_ms": 1795171312914,
+      "knowledge_time_ms": 1795171312943,
+      "mid_price": 62229.99,
+      "microprice": 62229.9977,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6221,
+      "impact_buy_100k_bps": 0.2431,
+      "processing_us": 28.8
+    },
+    {
+      "event_time_ms": 1795171313014,
+      "knowledge_time_ms": 1795171313044,
+      "mid_price": 62229.99,
+      "microprice": 62229.9981,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6889,
+      "impact_buy_100k_bps": 0.2608,
+      "processing_us": 60.7
+    },
+    {
+      "event_time_ms": 1795171313114,
+      "knowledge_time_ms": 1795171313143,
+      "mid_price": 62229.99,
+      "microprice": 62229.9981,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6889,
+      "impact_buy_100k_bps": 0.2608,
+      "processing_us": 32.7
+    },
+    {
+      "event_time_ms": 1795171313214,
+      "knowledge_time_ms": 1795171313258,
+      "mid_price": 62229.99,
+      "microprice": 62229.9983,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.713,
+      "impact_buy_100k_bps": 0.3061,
+      "processing_us": 50.8
+    },
+    {
+      "event_time_ms": 1795171313314,
+      "knowledge_time_ms": 1795171313343,
+      "mid_price": 62229.99,
+      "microprice": 62229.9983,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.713,
+      "impact_buy_100k_bps": 0.3061,
+      "processing_us": 33.3
+    },
+    {
+      "event_time_ms": 1795171313414,
+      "knowledge_time_ms": 1795171313443,
+      "mid_price": 62229.99,
+      "microprice": 62229.9983,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.713,
+      "impact_buy_100k_bps": 0.3061,
+      "processing_us": 30.0
+    },
+    {
+      "event_time_ms": 1795171313514,
+      "knowledge_time_ms": 1795171313543,
+      "mid_price": 62229.99,
+      "microprice": 62229.9981,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6866,
+      "impact_buy_100k_bps": 0.2957,
+      "processing_us": 31.3
+    },
+    {
+      "event_time_ms": 1795171313614,
+      "knowledge_time_ms": 1795171313645,
+      "mid_price": 62229.99,
+      "microprice": 62229.9983,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.7116,
+      "impact_buy_100k_bps": 0.3061,
+      "processing_us": 36.4
+    },
+    {
+      "event_time_ms": 1795171313714,
+      "knowledge_time_ms": 1795171313744,
+      "mid_price": 62229.99,
+      "microprice": 62229.9997,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.9357,
+      "impact_buy_100k_bps": 0.6942,
+      "processing_us": 59.4
+    },
+    {
+      "event_time_ms": 1795171313814,
+      "knowledge_time_ms": 1795171313846,
+      "mid_price": 62238.62,
+      "microprice": 62238.62,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.977,
+      "impact_buy_100k_bps": 0.9125,
+      "processing_us": 273.3
+    },
+    {
+      "event_time_ms": 1795171313914,
+      "knowledge_time_ms": 1795171313944,
+      "mid_price": 62238.62,
+      "microprice": 62238.62,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.9969,
+      "impact_buy_100k_bps": 0.9256,
+      "processing_us": 99.2
+    },
+    {
+      "event_time_ms": 1795171314014,
+      "knowledge_time_ms": 1795171314045,
+      "mid_price": 62240.98,
+      "microprice": 62240.9779,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.7844,
+      "impact_buy_100k_bps": 0.3932,
+      "processing_us": 79.7
+    },
+    {
+      "event_time_ms": 1795171314114,
+      "knowledge_time_ms": 1795171314146,
+      "mid_price": 62240.98,
+      "microprice": 62240.98,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.9986,
+      "impact_buy_100k_bps": 0.6736,
+      "processing_us": 81.9
+    },
+    {
+      "event_time_ms": 1795171314214,
+      "knowledge_time_ms": 1795171314244,
+      "mid_price": 62243.29,
+      "microprice": 62243.2972,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4315,
+      "impact_buy_100k_bps": 0.2462,
+      "processing_us": 124.8
+    },
+    {
+      "event_time_ms": 1795171314314,
+      "knowledge_time_ms": 1795171314343,
+      "mid_price": 62243.29,
+      "microprice": 62243.2972,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4585,
+      "impact_buy_100k_bps": 0.2457,
+      "processing_us": 69.5
+    },
+    {
+      "event_time_ms": 1795171314414,
+      "knowledge_time_ms": 1795171314444,
+      "mid_price": 62243.29,
+      "microprice": 62243.2972,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4593,
+      "impact_buy_100k_bps": 0.2457,
+      "processing_us": 44.8
+    },
+    {
+      "event_time_ms": 1795171314514,
+      "knowledge_time_ms": 1795171314558,
+      "mid_price": 62243.29,
+      "microprice": 62243.2972,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4592,
+      "impact_buy_100k_bps": 0.2457,
+      "processing_us": 60.8
+    },
+    {
+      "event_time_ms": 1795171314614,
+      "knowledge_time_ms": 1795171314652,
+      "mid_price": 62243.29,
+      "microprice": 62243.2972,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4592,
+      "impact_buy_100k_bps": 0.2461,
+      "processing_us": 47.0
+    },
+    {
+      "event_time_ms": 1795171314714,
+      "knowledge_time_ms": 1795171314744,
+      "mid_price": 62243.29,
+      "microprice": 62243.2972,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4592,
+      "impact_buy_100k_bps": 0.2458,
+      "processing_us": 40.7
+    },
+    {
+      "event_time_ms": 1795171314814,
+      "knowledge_time_ms": 1795171314843,
+      "mid_price": 62243.29,
+      "microprice": 62243.2965,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.299,
+      "impact_buy_100k_bps": 0.2023,
+      "processing_us": 50.7
+    },
+    {
+      "event_time_ms": 1795171314914,
+      "knowledge_time_ms": 1795171314943,
+      "mid_price": 62243.29,
+      "microprice": 62243.2965,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.2985,
+      "impact_buy_100k_bps": 0.2023,
+      "processing_us": 43.2
+    },
+    {
+      "event_time_ms": 1795171315014,
+      "knowledge_time_ms": 1795171315044,
+      "mid_price": 62243.29,
+      "microprice": 62243.297,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.3855,
+      "impact_buy_100k_bps": 0.3204,
+      "processing_us": 50.4
+    },
+    {
+      "event_time_ms": 1795171315114,
+      "knowledge_time_ms": 1795171315143,
+      "mid_price": 62243.29,
+      "microprice": 62243.2969,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.3615,
+      "impact_buy_100k_bps": 0.296,
+      "processing_us": 44.1
+    },
+    {
+      "event_time_ms": 1795171315214,
+      "knowledge_time_ms": 1795171315244,
+      "mid_price": 62243.29,
+      "microprice": 62243.2965,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.2895,
+      "impact_buy_100k_bps": 0.1885,
+      "processing_us": 51.7
+    },
+    {
+      "event_time_ms": 1795171315314,
+      "knowledge_time_ms": 1795171315344,
+      "mid_price": 62243.29,
+      "microprice": 62243.2967,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.3277,
+      "impact_buy_100k_bps": 0.1892,
+      "processing_us": 49.7
+    },
+    {
+      "event_time_ms": 1795171315414,
+      "knowledge_time_ms": 1795171315443,
+      "mid_price": 62243.29,
+      "microprice": 62243.2967,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.334,
+      "impact_buy_100k_bps": 0.1892,
+      "processing_us": 55.4
+    },
+    {
+      "event_time_ms": 1795171315514,
+      "knowledge_time_ms": 1795171315546,
+      "mid_price": 62243.29,
+      "microprice": 62243.2965,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.2841,
+      "impact_buy_100k_bps": 0.1654,
+      "processing_us": 51.9
+    },
+    {
+      "event_time_ms": 1795171315614,
+      "knowledge_time_ms": 1795171315644,
+      "mid_price": 62243.29,
+      "microprice": 62243.2966,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.3032,
+      "impact_buy_100k_bps": 0.1758,
+      "processing_us": 43.8
+    },
+    {
+      "event_time_ms": 1795171315714,
+      "knowledge_time_ms": 1795171315743,
+      "mid_price": 62243.29,
+      "microprice": 62243.2971,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4009,
+      "impact_buy_100k_bps": 0.2294,
+      "processing_us": 45.8
+    },
+    {
+      "event_time_ms": 1795171315814,
+      "knowledge_time_ms": 1795171315843,
+      "mid_price": 62243.29,
+      "microprice": 62243.2971,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4008,
+      "impact_buy_100k_bps": 0.2294,
+      "processing_us": 47.5
+    },
+    {
+      "event_time_ms": 1795171315914,
+      "knowledge_time_ms": 1795171315943,
+      "mid_price": 62243.29,
+      "microprice": 62243.2971,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4008,
+      "impact_buy_100k_bps": 0.2294,
+      "processing_us": 49.0
+    },
+    {
+      "event_time_ms": 1795171316014,
+      "knowledge_time_ms": 1795171316044,
+      "mid_price": 62243.29,
+      "microprice": 62243.2969,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.3789,
+      "impact_buy_100k_bps": 0.2179,
+      "processing_us": 54.6
+    },
+    {
+      "event_time_ms": 1795171316114,
+      "knowledge_time_ms": 1795171316143,
+      "mid_price": 62243.29,
+      "microprice": 62243.2969,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.379,
+      "impact_buy_100k_bps": 0.2178,
+      "processing_us": 56.6
+    },
+    {
+      "event_time_ms": 1795171316214,
+      "knowledge_time_ms": 1795171316248,
+      "mid_price": 62243.29,
+      "microprice": 62243.2965,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.289,
+      "impact_buy_100k_bps": 0.1679,
+      "processing_us": 38.2
+    },
+    {
+      "event_time_ms": 1795171316314,
+      "knowledge_time_ms": 1795171316345,
+      "mid_price": 62243.29,
+      "microprice": 62243.2962,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.2229,
+      "impact_buy_100k_bps": 0.1524,
+      "processing_us": 39.2
+    },
+    {
+      "event_time_ms": 1795171316414,
+      "knowledge_time_ms": 1795171316443,
+      "mid_price": 62243.29,
+      "microprice": 62243.2962,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.2276,
+      "impact_buy_100k_bps": 0.155,
+      "processing_us": 39.1
+    },
+    {
+      "event_time_ms": 1795171316514,
+      "knowledge_time_ms": 1795171316544,
+      "mid_price": 62243.29,
+      "microprice": 62243.2953,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0497,
+      "impact_buy_100k_bps": 0.1409,
+      "processing_us": 61.7
+    },
+    {
+      "event_time_ms": 1795171316614,
+      "knowledge_time_ms": 1795171316644,
+      "mid_price": 62243.29,
+      "microprice": 62243.2953,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0497,
+      "impact_buy_100k_bps": 0.1409,
+      "processing_us": 44.4
+    },
+    {
+      "event_time_ms": 1795171316714,
+      "knowledge_time_ms": 1795171316746,
+      "mid_price": 62243.29,
+      "microprice": 62243.2953,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0564,
+      "impact_buy_100k_bps": 0.1409,
+      "processing_us": 35.3
+    },
+    {
+      "event_time_ms": 1795171316814,
+      "knowledge_time_ms": 1795171316843,
+      "mid_price": 62243.29,
+      "microprice": 62243.2953,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0564,
+      "impact_buy_100k_bps": 0.1409,
+      "processing_us": 38.9
+    },
+    {
+      "event_time_ms": 1795171316914,
+      "knowledge_time_ms": 1795171316946,
+      "mid_price": 62243.29,
+      "microprice": 62243.2953,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0619,
+      "impact_buy_100k_bps": 0.1409,
+      "processing_us": 46.6
+    },
+    {
+      "event_time_ms": 1795171317014,
+      "knowledge_time_ms": 1795171317043,
+      "mid_price": 62243.29,
+      "microprice": 62243.2947,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.064,
+      "impact_buy_100k_bps": 0.0621,
+      "processing_us": 46.3
+    },
+    {
+      "event_time_ms": 1795171317114,
+      "knowledge_time_ms": 1795171317144,
+      "mid_price": 62243.29,
+      "microprice": 62243.2922,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.5744,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 67.9
+    },
+    {
+      "event_time_ms": 1795171317214,
+      "knowledge_time_ms": 1795171317243,
+      "mid_price": 62243.29,
+      "microprice": 62243.2921,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.5929,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 46.5
+    },
+    {
+      "event_time_ms": 1795171317314,
+      "knowledge_time_ms": 1795171317344,
+      "mid_price": 62243.29,
+      "microprice": 62243.2924,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.5216,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 48.1
+    },
+    {
+      "event_time_ms": 1795171317414,
+      "knowledge_time_ms": 1795171317443,
+      "mid_price": 62243.29,
+      "microprice": 62243.2924,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.5245,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 46.6
+    },
+    {
+      "event_time_ms": 1795171317514,
+      "knowledge_time_ms": 1795171317543,
+      "mid_price": 62243.29,
+      "microprice": 62243.2924,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.5263,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 46.8
+    },
+    {
+      "event_time_ms": 1795171317614,
+      "knowledge_time_ms": 1795171317643,
+      "mid_price": 62243.29,
+      "microprice": 62243.2922,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.5762,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 59.0
+    },
+    {
+      "event_time_ms": 1795171317714,
+      "knowledge_time_ms": 1795171317745,
+      "mid_price": 62243.29,
+      "microprice": 62243.2923,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.5674,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 37.6
+    },
+    {
+      "event_time_ms": 1795171317814,
+      "knowledge_time_ms": 1795171317843,
+      "mid_price": 62243.29,
+      "microprice": 62243.2908,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8354,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 70.9
+    },
+    {
+      "event_time_ms": 1795171317914,
+      "knowledge_time_ms": 1795171317947,
+      "mid_price": 62243.29,
+      "microprice": 62243.2915,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7195,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 50.2
+    },
+    {
+      "event_time_ms": 1795171318014,
+      "knowledge_time_ms": 1795171318045,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7251,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 47.9
+    },
+    {
+      "event_time_ms": 1795171318114,
+      "knowledge_time_ms": 1795171318143,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7251,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 44.2
+    },
+    {
+      "event_time_ms": 1795171318214,
+      "knowledge_time_ms": 1795171318247,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7251,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 49.1
+    },
+    {
+      "event_time_ms": 1795171318314,
+      "knowledge_time_ms": 1795171318343,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.725,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 46.9
+    },
+    {
+      "event_time_ms": 1795171318414,
+      "knowledge_time_ms": 1795171318447,
+      "mid_price": 62243.29,
+      "microprice": 62243.2913,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7566,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 56.3
+    },
+    {
+      "event_time_ms": 1795171318514,
+      "knowledge_time_ms": 1795171318545,
+      "mid_price": 62243.29,
+      "microprice": 62243.2913,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7566,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 44.7
+    },
+    {
+      "event_time_ms": 1795171318614,
+      "knowledge_time_ms": 1795171318644,
+      "mid_price": 62243.29,
+      "microprice": 62243.2913,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7566,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 36.3
+    },
+    {
+      "event_time_ms": 1795171318716,
+      "knowledge_time_ms": 1795171318750,
+      "mid_price": 62243.29,
+      "microprice": 62243.2913,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7566,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 39.2
+    },
+    {
+      "event_time_ms": 1795171318814,
+      "knowledge_time_ms": 1795171318851,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.725,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 43.0
+    },
+    {
+      "event_time_ms": 1795171318914,
+      "knowledge_time_ms": 1795171318944,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7244,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 39.0
+    },
+    {
+      "event_time_ms": 1795171319014,
+      "knowledge_time_ms": 1795171319043,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7244,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 39.1
+    },
+    {
+      "event_time_ms": 1795171319114,
+      "knowledge_time_ms": 1795171319144,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7243,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 70.4
+    },
+    {
+      "event_time_ms": 1795171319214,
+      "knowledge_time_ms": 1795171319243,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7249,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 56.7
+    },
+    {
+      "event_time_ms": 1795171319314,
+      "knowledge_time_ms": 1795171319344,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.725,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 49.2
+    },
+    {
+      "event_time_ms": 1795171319414,
+      "knowledge_time_ms": 1795171319444,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7244,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 37.2
+    },
+    {
+      "event_time_ms": 1795171319514,
+      "knowledge_time_ms": 1795171319543,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7241,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 46.1
+    },
+    {
+      "event_time_ms": 1795171319614,
+      "knowledge_time_ms": 1795171319644,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7241,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 59.5
+    },
+    {
+      "event_time_ms": 1795171319714,
+      "knowledge_time_ms": 1795171319743,
+      "mid_price": 62243.29,
+      "microprice": 62243.2932,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.42,
+      "impact_buy_100k_bps": 0.0489,
+      "processing_us": 47.5
+    },
+    {
+      "event_time_ms": 1795171319814,
+      "knowledge_time_ms": 1795171319844,
+      "mid_price": 62243.29,
+      "microprice": 62243.2915,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7145,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 67.4
+    },
+    {
+      "event_time_ms": 1795171319914,
+      "knowledge_time_ms": 1795171319944,
+      "mid_price": 62243.29,
+      "microprice": 62243.2916,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.691,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 57.5
+    },
+    {
+      "event_time_ms": 1795171320014,
+      "knowledge_time_ms": 1795171320044,
+      "mid_price": 62243.29,
+      "microprice": 62243.2915,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.6921,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 86.8
+    },
+    {
+      "event_time_ms": 1795171320114,
+      "knowledge_time_ms": 1795171320143,
+      "mid_price": 62243.29,
+      "microprice": 62243.2915,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.6918,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 50.6
+    },
+    {
+      "event_time_ms": 1795171320214,
+      "knowledge_time_ms": 1795171320244,
+      "mid_price": 62243.29,
+      "microprice": 62243.2916,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.6761,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 44.5
+    },
+    {
+      "event_time_ms": 1795171320315,
+      "knowledge_time_ms": 1795171320344,
+      "mid_price": 62243.29,
+      "microprice": 62243.2915,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.692,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 24.0
+    },
+    {
+      "event_time_ms": 1795171320414,
+      "knowledge_time_ms": 1795171320448,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7082,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 57.7
+    },
+    {
+      "event_time_ms": 1795171320514,
+      "knowledge_time_ms": 1795171320544,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7082,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 44.2
+    },
+    {
+      "event_time_ms": 1795171320614,
+      "knowledge_time_ms": 1795171320649,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7082,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 47.9
+    },
+    {
+      "event_time_ms": 1795171320715,
+      "knowledge_time_ms": 1795171320746,
+      "mid_price": 62243.29,
+      "microprice": 62243.2914,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.7082,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 20.3
+    },
+    {
+      "event_time_ms": 1795171320814,
+      "knowledge_time_ms": 1795171320844,
+      "mid_price": 62243.29,
+      "microprice": 62243.2916,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.676,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 63.1
+    },
+    {
+      "event_time_ms": 1795171320914,
+      "knowledge_time_ms": 1795171320944,
+      "mid_price": 62243.29,
+      "microprice": 62243.2916,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.676,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 40.5
+    },
+    {
+      "event_time_ms": 1795171321014,
+      "knowledge_time_ms": 1795171321044,
+      "mid_price": 62243.29,
+      "microprice": 62243.2916,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.676,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 57.8
+    },
+    {
+      "event_time_ms": 1795171321114,
+      "knowledge_time_ms": 1795171321143,
+      "mid_price": 62243.29,
+      "microprice": 62243.2902,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.9488,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 94.7
+    },
+    {
+      "event_time_ms": 1795171321214,
+      "knowledge_time_ms": 1795171321244,
+      "mid_price": 62236.51,
+      "microprice": 62236.51,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.9872,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 248.5
+    },
+    {
+      "event_time_ms": 1795171321314,
+      "knowledge_time_ms": 1795171321343,
+      "mid_price": 62236.51,
+      "microprice": 62236.5103,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.9296,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 78.5
+    },
+    {
+      "event_time_ms": 1795171321414,
+      "knowledge_time_ms": 1795171321444,
+      "mid_price": 62236.51,
+      "microprice": 62236.511,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8073,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 61.6
+    },
+    {
+      "event_time_ms": 1795171321514,
+      "knowledge_time_ms": 1795171321552,
+      "mid_price": 62236.51,
+      "microprice": 62236.5105,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.9066,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 117.1
+    },
+    {
+      "event_time_ms": 1795171321614,
+      "knowledge_time_ms": 1795171321643,
+      "mid_price": 62236.51,
+      "microprice": 62236.5108,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8413,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 46.5
+    },
+    {
+      "event_time_ms": 1795171321714,
+      "knowledge_time_ms": 1795171321742,
+      "mid_price": 62236.51,
+      "microprice": 62236.5108,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8415,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 38.1
+    },
+    {
+      "event_time_ms": 1795171321814,
+      "knowledge_time_ms": 1795171321844,
+      "mid_price": 62236.51,
+      "microprice": 62236.5108,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8414,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 49.6
+    },
+    {
+      "event_time_ms": 1795171321914,
+      "knowledge_time_ms": 1795171321948,
+      "mid_price": 62236.51,
+      "microprice": 62236.5108,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8414,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 47.6
+    },
+    {
+      "event_time_ms": 1795171322014,
+      "knowledge_time_ms": 1795171322044,
+      "mid_price": 62236.51,
+      "microprice": 62236.5108,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8409,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 68.1
+    },
+    {
+      "event_time_ms": 1795171322114,
+      "knowledge_time_ms": 1795171322144,
+      "mid_price": 62236.51,
+      "microprice": 62236.5108,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8403,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 40.4
+    },
+    {
+      "event_time_ms": 1795171322214,
+      "knowledge_time_ms": 1795171322243,
+      "mid_price": 62236.51,
+      "microprice": 62236.511,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.8068,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 53.4
+    },
+    {
+      "event_time_ms": 1795171322314,
+      "knowledge_time_ms": 1795171322343,
+      "mid_price": 62236.51,
+      "microprice": 62236.5152,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0285,
+      "impact_buy_100k_bps": 0.1704,
+      "processing_us": 122.7
+    },
+    {
+      "event_time_ms": 1795171322414,
+      "knowledge_time_ms": 1795171322443,
+      "mid_price": 62236.51,
+      "microprice": 62236.5154,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0733,
+      "impact_buy_100k_bps": 0.2515,
+      "processing_us": 81.7
+    },
+    {
+      "event_time_ms": 1795171322514,
+      "knowledge_time_ms": 1795171322543,
+      "mid_price": 62236.51,
+      "microprice": 62236.5153,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0437,
+      "impact_buy_100k_bps": 0.1494,
+      "processing_us": 47.5
+    },
+    {
+      "event_time_ms": 1795171322614,
+      "knowledge_time_ms": 1795171322644,
+      "mid_price": 62236.51,
+      "microprice": 62236.5153,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.0436,
+      "impact_buy_100k_bps": 0.1242,
+      "processing_us": 62.7
+    },
+    {
+      "event_time_ms": 1795171322714,
+      "knowledge_time_ms": 1795171322743,
+      "mid_price": 62236.51,
+      "microprice": 62236.5123,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.6209,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 62.6
+    },
+    {
+      "event_time_ms": 1795171322814,
+      "knowledge_time_ms": 1795171322843,
+      "mid_price": 62236.51,
+      "microprice": 62236.5102,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.9526,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 91.8
+    },
+    {
+      "event_time_ms": 1795171322914,
+      "knowledge_time_ms": 1795171322943,
+      "mid_price": 62235.32,
+      "microprice": 62235.31,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.9999,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 109.5
+    },
+    {
+      "event_time_ms": 1795171323014,
+      "knowledge_time_ms": 1795171323044,
+      "mid_price": 62235.32,
+      "microprice": 62235.3102,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.9642,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 105.3
+    },
+    {
+      "event_time_ms": 1795171323114,
+      "knowledge_time_ms": 1795171323144,
+      "mid_price": 62235.32,
+      "microprice": 62235.3103,
+      "spread_bps": 0.0016,
+      "obi_l5": -0.9536,
+      "impact_buy_100k_bps": 0.0008,
+      "processing_us": 63.5
+    },
+    {
+      "event_time_ms": 1795171323214,
+      "knowledge_time_ms": 1795171323251,
+      "mid_price": 62235.32,
+      "microprice": 62235.3189,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.4848,
+      "impact_buy_100k_bps": 0.4311,
+      "processing_us": 139.6
+    },
+    {
+      "event_time_ms": 1795171323314,
+      "knowledge_time_ms": 1795171323344,
+      "mid_price": 62235.32,
+      "microprice": 62235.319,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.7499,
+      "impact_buy_100k_bps": 0.5538,
+      "processing_us": 84.1
+    },
+    {
+      "event_time_ms": 1795171323414,
+      "knowledge_time_ms": 1795171323444,
+      "mid_price": 62235.32,
+      "microprice": 62235.3186,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6635,
+      "impact_buy_100k_bps": 0.3095,
+      "processing_us": 108.3
+    },
+    {
+      "event_time_ms": 1795171323514,
+      "knowledge_time_ms": 1795171323543,
+      "mid_price": 62235.32,
+      "microprice": 62235.32,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.9922,
+      "impact_buy_100k_bps": 1.2304,
+      "processing_us": 106.8
+    },
+    {
+      "event_time_ms": 1795171323614,
+      "knowledge_time_ms": 1795171323647,
+      "mid_price": 62237.81,
+      "microprice": 62237.8086,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.8242,
+      "impact_buy_100k_bps": 0.5683,
+      "processing_us": 85.8
+    },
+    {
+      "event_time_ms": 1795171323714,
+      "knowledge_time_ms": 1795171323743,
+      "mid_price": 62237.81,
+      "microprice": 62237.8088,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.8328,
+      "impact_buy_100k_bps": 0.549,
+      "processing_us": 58.8
+    },
+    {
+      "event_time_ms": 1795171323814,
+      "knowledge_time_ms": 1795171323844,
+      "mid_price": 62239.48,
+      "microprice": 62239.4799,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.9918,
+      "impact_buy_100k_bps": 0.8103,
+      "processing_us": 109.8
+    },
+    {
+      "event_time_ms": 1795171323914,
+      "knowledge_time_ms": 1795171323953,
+      "mid_price": 62239.48,
+      "microprice": 62239.48,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.9885,
+      "impact_buy_100k_bps": 0.897,
+      "processing_us": 73.0
+    },
+    {
+      "event_time_ms": 1795171324014,
+      "knowledge_time_ms": 1795171324044,
+      "mid_price": 62239.48,
+      "microprice": 62239.4793,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6611,
+      "impact_buy_100k_bps": 0.4752,
+      "processing_us": 76.3
+    },
+    {
+      "event_time_ms": 1795171324114,
+      "knowledge_time_ms": 1795171324144,
+      "mid_price": 62239.48,
+      "microprice": 62239.4791,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.6618,
+      "impact_buy_100k_bps": 0.4488,
+      "processing_us": 57.9
+    },
+    {
+      "event_time_ms": 1795171324214,
+      "knowledge_time_ms": 1795171324242,
+      "mid_price": 62239.48,
+      "microprice": 62239.4788,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.5836,
+      "impact_buy_100k_bps": 0.4496,
+      "processing_us": 59.3
+    },
+    {
+      "event_time_ms": 1795171324314,
+      "knowledge_time_ms": 1795171324343,
+      "mid_price": 62239.48,
+      "microprice": 62239.4788,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.5836,
+      "impact_buy_100k_bps": 0.4496,
+      "processing_us": 59.6
+    },
+    {
+      "event_time_ms": 1795171324414,
+      "knowledge_time_ms": 1795171324443,
+      "mid_price": 62239.48,
+      "microprice": 62239.479,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.5994,
+      "impact_buy_100k_bps": 0.4659,
+      "processing_us": 46.3
+    },
+    {
+      "event_time_ms": 1795171324514,
+      "knowledge_time_ms": 1795171324544,
+      "mid_price": 62239.99,
+      "microprice": 62240.0,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.9862,
+      "impact_buy_100k_bps": 1.2122,
+      "processing_us": 124.2
+    },
+    {
+      "event_time_ms": 1795171324614,
+      "knowledge_time_ms": 1795171324643,
+      "mid_price": 62239.99,
+      "microprice": 62240.0,
+      "spread_bps": 0.0016,
+      "obi_l5": 0.9862,
+      "impact_buy_100k_bps": 0.9978,
+      "processing_us": 48.9
+    }
+  ]
+}

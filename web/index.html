@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TickForge: Real-time Binance L2 Limit Order Book, Bi-Temporal Parquet Lakehouse, and Cross-Feed Reconciliation Engine by Arnab Mondal.">
+  <title>TickForge: Real-Time L2 Order Book and Bi-Temporal Market Data Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-group">
+        <h1 class="brand-title">TickForge</h1>
+        <p class="brand-sub">Binance L2 order book, bi-temporal Parquet lakehouse, and cross-feed reconciler</p>
+      </div>
+      <div class="topbar-controls">
+        <div class="symbol-tabs" role="tablist" aria-label="Market pair">
+          <button class="sym-btn active" data-symbol="BTCUSDT">Bitcoin (BTC)</button>
+          <button class="sym-btn" data-symbol="ETHUSDT">Ethereum (ETH)</button>
+          <button class="sym-btn" data-symbol="SOLUSDT">Solana (SOL)</button>
+        </div>
+        <div class="status-pill" id="ws-status-pill">
+          <span class="status-dot" id="ws-status-dot"></span>
+          <span id="ws-status-text">Connecting</span>
+        </div>
+        <a class="ext-link" href="https://github.com/arnabm14/tickforge" target="_blank" rel="noopener">GitHub Repo</a>
+        <a class="ext-link ext-link-accent" href="https://arnab-mondal.pages.dev" target="_blank" rel="noopener">Arnab Mondal</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <!-- KPI Microstructure Strip -->
+    <section class="kpi-strip" aria-label="Live microstructure telemetry">
+      <article class="kpi-card">
+        <div class="kpi-label">Mid price</div>
+        <div class="kpi-value mono" id="kpi-mid">--</div>
+        <div class="kpi-meta mono" id="kpi-bbo">Bid -- / Ask --</div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-label">Weighted microprice</div>
+        <div class="kpi-value mono" id="kpi-micro">--</div>
+        <div class="kpi-meta mono" id="kpi-micro-edge">Edge vs mid: -- bps</div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-label">Bid-ask spread</div>
+        <div class="kpi-value mono" id="kpi-spread">-- bps</div>
+        <div class="kpi-meta mono" id="kpi-crossed">Invariant: pending</div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-label">Order book imbalance (L5)</div>
+        <div class="kpi-value mono" id="kpi-obi">--</div>
+        <div class="obi-track"><div class="obi-fill" id="obi-fill"></div></div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-label">$500K buy slippage</div>
+        <div class="kpi-value mono" id="kpi-impact">-- bps</div>
+        <div class="kpi-meta mono" id="kpi-impact-100k">$100K buy: -- bps</div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-label">Live feed rate</div>
+        <div class="kpi-value mono" id="kpi-rate">-- msg/s</div>
+        <div class="kpi-meta mono" id="kpi-seq">Update ID: --</div>
+      </article>
+    </section>
+
+    <!-- Primary Workbench: L2 Order Book + Depth Curve & Live Reconciler -->
+    <section class="workbench">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Live L2 Order Book Ladder</h2>
+          <span class="panel-tag mono" id="book-symbol-tag">BTC/USDT (100ms)</span>
+        </div>
+        <div class="ladder-header mono">
+          <span>Price (USDT)</span>
+          <span class="right">Size</span>
+          <span class="right">Cum. notional</span>
+        </div>
+        <div class="ladder-side asks" id="asks-container"></div>
+        <div class="spread-divider mono">
+          <span id="divider-mid">Mid pending</span>
+          <span id="divider-spread">Spread pending</span>
+        </div>
+        <div class="ladder-side bids" id="bids-container"></div>
+      </div>
+
+      <div class="right-stack">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Cumulative Depth Curve and Liquidity Wall</h2>
+            <span class="panel-tag mono" id="depth-summary-tag">Top 20 levels</span>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="depth-canvas" height="220" aria-label="Live cumulative bid and ask order book depth chart"></canvas>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Live Cross-Feed Reconciliation Auditor</h2>
+            <div class="head-actions">
+              <span class="panel-tag mono">WS vs REST /api/v3/depth</span>
+              <button class="mini-btn" id="reconcile-now-btn">Audit now</button>
+            </div>
+          </div>
+          <div class="reconcile-summary" id="python-reconcile-grid"></div>
+          <div class="audit-table-wrap">
+            <table class="audit-table mono">
+              <thead>
+                <tr>
+                  <th>UTC time</th>
+                  <th>Pair</th>
+                  <th class="right">WS mid</th>
+                  <th class="right">REST mid</th>
+                  <th class="right">Drift (bps)</th>
+                  <th>Crossed</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="audit-log-body">
+                <tr><td colspan="7" class="muted-cell">Waiting for first live WS vs REST reconciliation pass…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Python Engine Benchmarks & Bi-Temporal Point-in-Time Replay -->
+    <section class="analytics-grid">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>50,000-Event Deterministic Replay Benchmark</h2>
+          <span class="panel-tag mono">Python engine (measured)</span>
+        </div>
+        <div class="bench-metrics" id="bench-metrics">
+          <div class="bench-stat">
+            <span class="bench-k">Throughput</span>
+            <span class="bench-v mono" id="bench-tput">--</span>
+          </div>
+          <div class="bench-stat">
+            <span class="bench-k">p50 latency</span>
+            <span class="bench-v mono" id="bench-p50">--</span>
+          </div>
+          <div class="bench-stat">
+            <span class="bench-k">p95 latency</span>
+            <span class="bench-v mono" id="bench-p95">--</span>
+          </div>
+          <div class="bench-stat">
+            <span class="bench-k">p99 latency</span>
+            <span class="bench-v mono" id="bench-p99">--</span>
+          </div>
+        </div>
+        <div class="hist-block">
+          <div class="hist-title">Per-event L2 update latency distribution (microseconds)</div>
+          <div id="latency-hist"></div>
+        </div>
+        <div class="storage-footer mono" id="storage-meta">
+          Loading Parquet Zstd capture metadata…
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Bi-Temporal Point-in-Time Replay Explorer</h2>
+          <span class="panel-tag mono tag-ok" id="pit-badge">Zero future leaks</span>
+        </div>
+        <p class="pit-copy">
+          Every captured Binance snapshot stores dual timestamps (<code class="inline-code">event_time_ms</code> and <code class="inline-code">knowledge_time_ms</code>) in Zstd-compressed Apache Parquet. Scrub the knowledge horizon below to verify zero look-ahead bias during backtest replay.
+        </p>
+        <div class="scrubber-row">
+          <label for="pit-slider" class="mono">as_of_knowledge_ms:</label>
+          <input type="range" id="pit-slider" min="10" max="100" value="100">
+          <span class="mono" id="pit-cutoff-label">--</span>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="pit-canvas" height="190" aria-label="Bi-temporal point-in-time mid price and microprice replay chart"></canvas>
+        </div>
+        <div class="pit-stats mono" id="pit-stats-bar">
+          <span>Visible ticks: --</span>
+          <span>Excluded future ticks: --</span>
+          <span>Leakage count: 0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & Schema Reference -->
+    <section class="panel arch-panel">
+      <div class="panel-head">
+        <h2>System Architecture and Quant Data Invariants</h2>
+        <span class="panel-tag mono">5/5 unit tests passing (buffer-first Binance sync)</span>
+      </div>
+      <div class="arch-flow">
+        <div class="arch-node">
+          <h3>1. Buffer-First WebSocket Sync</h3>
+          <p>Opens combined Binance <code class="inline-code">@depth@100ms</code> streams first, buffers deltas, hydrates REST snapshots, and verifies <code class="inline-code">U &lt;= lastUpdateId + 1 &lt;= u</code> with zero missed updates.</p>
+        </div>
+        <div class="arch-node">
+          <h3>2. In-Memory L2 Order Book</h3>
+          <p>Applies incremental level updates and zero-qty deletes, guards against crossed books (<code class="inline-code">best_bid &gt;= best_ask</code>), and computes microprice, OBI (L1/L5/L10), and VWAP slippage.</p>
+        </div>
+        <div class="arch-node">
+          <h3>3. Bi-Temporal Zstd Parquet</h3>
+          <p>Persists dual-timestamped records via PyArrow (<code class="inline-code">event_time_ms</code> vs <code class="inline-code">knowledge_time_ms</code>) so late historical backfills never leak into earlier point-in-time backtests.</p>
+        </div>
+        <div class="arch-node">
+          <h3>4. Cross-Feed Drift Auditor</h3>
+          <p>Compares live WS book state against independent REST depth snapshots, tracking mid, bid, and ask drift in bps, sequence gaps, and rolling 5-sigma return outliers.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner mono">
+      <span>TickForge by Arnab Mondal (Data and Systems Engineer)</span>
+      <span>Live data: Binance Public Market Data API (read-only telemetry)</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
